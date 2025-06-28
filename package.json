@@ -1,0 +1,19 @@
+{
+  "name": "qr-kod-pro",
+  "version": "1.0.0",
+  "description": "Professional QR Code Generator Platform",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.3"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "keywords": ["qr-code", "generator", "javascript", "web"],
+  "author": "Sukru Sukruoglu",
+  "license": "MIT"
+}
