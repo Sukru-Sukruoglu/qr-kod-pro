@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR-KOD.PRO - Profesyonel QR Kod Oluşturucu</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+        input { padding: 10px; margin: 10px; width: 300px; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        #qr-output { margin: 20px; }
+    </style>
+</head>
+<body>
+    <h1>🎯 QR-KOD.PRO</h1>
+    <p>Profesyonel QR Kod Oluşturucu</p>
+    
+    <div>
+        <input type="text" id="qr-input" placeholder="QR kod içeriğini buraya yazın..." value="https://qr-kod.pro">
+        <br>
+        <button onclick="generateQR()">QR Kod Oluştur</button>
+    </div>
+    
+    <div id="qr-output"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+    <script>
+        function generateQR() {
+            const text = document.getElementById('qr-input').value;
+            if (text.trim()) {
+                const qr = qrcode(0, 'M');
+                qr.addData(text);
+                qr.make();
+                document.getElementById('qr-output').innerHTML = qr.createImgTag(6);
+            } else {
+                alert('Lütfen QR kod içeriği girin!');
+            }
+        }
+        
+        // Sayfa yüklendiğinde varsayılan QR oluştur
+        window.onload = function() {
+            generateQR();
+        }
+    </script>
+</body>
+</html>
